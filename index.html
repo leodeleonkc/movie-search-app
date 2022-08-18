@@ -18,7 +18,7 @@
     <meta property="og:url" content="https://www.leodeleon.co/movieapp" />
     <meta
       property="og:image"
-      content="https://www.leodeleon.co/pawssword/images/phpycRTmI_c2PM.jpg"
+      content="https://www.leodeleon.co/movie-search-app/images/avatar.jpg"
     />
     <title>🍿 Movie Library App</title>
 
@@ -43,13 +43,23 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 class="header-text">ANOTHER APP BY LEO DE LEON</h1>
     <header id="hero">
-      <div class="layer-bg layer" data-depth="0.10" data-type="parallax"></div>
+      <div
+        class="layer-title layer"
+        data-depth="0.10"
+        data-type="parallax"
+      ></div>
+      <div class="layer-bg layer" data-depth="0.15" data-type="parallax"></div>
       <div class="layer-1 layer" data-depth="0.12" data-type="parallax"></div>
       <div class="layer-3 layer" data-depth="0.15" data-type="parallax"></div>
       <div
@@ -73,7 +83,9 @@
       </form>
 
       <!-- End of Search Bar -->
-      <div id="content">
+
+      <!-- Dynamic Content -->
+      <div id="dynamic-html" class="container-flex">
         <img
           class="explore"
           src="images/no-data-initial.svg"

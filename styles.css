@@ -7,7 +7,7 @@ body {
 body {
   margin: 1rem;
   font-family: "Nunito", sans-serif;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.07rem;
   text-align: center;
   touch-action: manipulation;
   background-color: #abdcd4;
@@ -17,13 +17,6 @@ body {
 @font-face {
   font-family: "BigNooleTitling";
   src: url(fonts/big_noodle_titling.ttf) format("truetype");
-}
-
-h1 {
-  font-family: "BigNoodleTitling", Verdana, Tahoma;
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  letter-spacing: 0.3rem;
 }
 
 .container {
@@ -60,6 +53,10 @@ header {
   height: 700px;
   position: fixed;
   z-index: -1;
+}
+
+.layer-title {
+  background-image: url("images/title.png");
 }
 
 .layer-bg {
@@ -135,7 +132,7 @@ header {
 /* End of Search Bar */
 
 .explore {
-  padding: 8rem 0;
+  padding: 10rem 0;
 }
 
 footer {
@@ -143,4 +140,60 @@ footer {
   font-size: 0.7rem;
   color: rgb(100, 100, 100);
   background-color: #abdcd4;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Dynamic Movie Info Content */
+.container-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#content {
+  /* border-bottom: #e1e1e1 1px solid; */
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.movie-poster-img {
+  max-width: 100%;
+  border-radius: 7px;
+  margin-bottom: 1rem;
+}
+
+.movie-title-and-rating {
+  display: flex;
+}
+
+.rated {
+  font-size: 1.2rem;
+  color: #c4c4c4;
+}
+
+.movie-small-deets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-deets {
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+
+.movie-description {
+  text-align: left;
+}
+
+.col-md-3 {
+  padding-left: 2rem;
+}
+.col-md-8 {
+  padding: 0 3rem;
 }
