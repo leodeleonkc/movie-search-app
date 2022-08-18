@@ -1,0 +1,146 @@
+html,
+body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+body {
+  margin: 1rem;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  touch-action: manipulation;
+  background-color: #abdcd4;
+  color: #212225;
+}
+
+@font-face {
+  font-family: "BigNooleTitling";
+  src: url(fonts/big_noodle_titling.ttf) format("truetype");
+}
+
+h1 {
+  font-family: "BigNoodleTitling", Verdana, Tahoma;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  letter-spacing: 0.3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  margin: auto;
+  align-items: center;
+  border-radius: 0.7rem;
+  background-color: #f3f3f3;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+#hero {
+  height: 690px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.layer {
+  background-position: top center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 700px;
+  position: fixed;
+  z-index: -1;
+}
+
+.layer-bg {
+  background-image: url("images/movietimeheader.gif");
+}
+
+.layer-1 {
+  background-image: url("images/reel.png");
+}
+
+.layer-3 {
+  background-image: url("images/clicker.png");
+}
+
+.layer-4 {
+  background-image: url("images/popcorn.png");
+}
+
+.layer-overlay {
+  background-image: url("images/ticket.png");
+}
+
+/* Search Bar --------------------------------*/
+
+.search {
+  width: 400px;
+  height: 45px;
+  margin: 2.5rem auto;
+  background: rgb(255, 255, 255);
+  background: rgba(255, 255, 255);
+  border-radius: 5px;
+  border: 1px solid rgb(189, 189, 189);
+  font-size: 1.3rem;
+}
+.search input {
+  width: 270px;
+  padding: 0.4rem 0.7rem;
+  text-align: left;
+  color: rgb(109, 109, 109);
+  border: 0;
+  background: transparent;
+  border-radius: 3px 0 0 3px;
+}
+.search input:focus {
+  outline: 0;
+  background: transparent;
+}
+.search button {
+  position: relative;
+  float: right;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 43px;
+  width: 120px;
+  color: rgb(255, 255, 255);
+  background: #de4f47;
+  border-left: 1px solid rgb(159, 159, 159);
+  border-radius: 0 3px 3px 0;
+  transition-duration: 300ms;
+}
+.search button:hover {
+  background: rgb(109, 109, 109);
+  color: #fff;
+}
+.search button:active {
+  box-shadow: 0px 0px 12px 0px #e1e1e1;
+}
+.search button:focus {
+  outline: 0;
+}
+
+/* End of Search Bar */
+
+.explore {
+  padding: 8rem 0;
+}
+
+footer {
+  padding: 2rem 0;
+  font-size: 0.7rem;
+  color: rgb(100, 100, 100);
+  background-color: #abdcd4;
+}
