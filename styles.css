@@ -14,9 +14,9 @@ body {
   color: #212225;
 }
 
-@font-face {
-  font-family: "BigNooleTitling";
-  src: url(fonts/big_noodle_titling.ttf) format("truetype");
+h1 {
+  color: #c4c4c4;
+  margin: 0 3rem 8rem 3rem;
 }
 
 .container {
@@ -77,6 +77,25 @@ header {
 
 .layer-overlay {
   background-image: url("images/ticket.png");
+}
+
+#hero-mobile {
+  display: none;
+  width: 100px;
+}
+
+@media screen and (max-width: 767px) {
+  #hero {
+    display: none;
+  }
+
+  #hero-mobile {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: -1.5rem auto;
+    align-items: center;
+  }
 }
 
 /* Search Bar --------------------------------*/
