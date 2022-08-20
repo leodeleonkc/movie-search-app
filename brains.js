@@ -21,7 +21,7 @@ let movies;
 async function findMovie() {
   // Fetch the initial search query
   const res = await fetch(
-    `http://www.omdbapi.com/?apikey=98a9f83d&s=${searchQuery.value}`
+    `https://www.omdbapi.com/?apikey=98a9f83d&s=${searchQuery.value}`
   );
   const firstData = await res.json();
   // console.log(firstData);
@@ -41,7 +41,7 @@ async function Render() {
   dynamicHtml.innerHTML = "";
   for (let { imdbID } of movies) {
     const res = await fetch(
-      `http://www.omdbapi.com/?apikey=98a9f83d&i=${imdbID}`
+      `https://www.omdbapi.com/?apikey=98a9f83d&i=${imdbID}&type=movie`
     );
     const data = await res.json();
 
