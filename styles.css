@@ -11,8 +11,18 @@ body {
   letter-spacing: 0.07rem;
   text-align: center;
   touch-action: manipulation;
-  background-color: #abdcd4;
+  /* background-color: #abd6dc; */
+  background-image: url("images/pattern-bg.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
+
   color: #212225;
+}
+
+.site-bg {
+  background-image: url("images/pattern-bg.jpg");
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
 
 h1 {
@@ -22,6 +32,10 @@ h1 {
 
 h2 {
   margin: 1rem 0;
+}
+
+hr {
+  color: #212225;
 }
 
 .container {
@@ -68,9 +82,9 @@ header {
   background-image: url("images/movietimeheader.gif");
 }
 
-.layer-1 {
-  /* background-image: url("images/reel.png"); */
-}
+/* .layer-1 {
+  background-image: url("images/reel.png");
+} */
 
 .layer-3 {
   background-image: url("images/clicker.png");
@@ -122,19 +136,18 @@ header {
 }
 
 /* Search Bar --------------------------------*/
-
 .btn:hover {
   color: #fff;
 }
 
 .input-text:focus {
   box-shadow: 0px 0px 0px;
-  border-color: #f8c146;
+  border-color: #ffc107;
   outline: 0px;
 }
 
 .form-control {
-  border: 1px solid #f8c146;
+  border: 1px solid #ffc107;
 }
 
 .search {
@@ -161,7 +174,8 @@ footer {
   padding: 2rem 0;
   font-size: 0.7rem;
   color: rgb(100, 100, 100);
-  background-color: #abdcd4;
+  /* background-color: #abdcd4; */
+  /* background-color: #ffd965; */
 }
 
 .hidden {
@@ -182,7 +196,6 @@ footer {
 }
 
 #content {
-  /* border-bottom: #e1e1e1 1px solid; */
   padding-bottom: 2em;
   margin-bottom: 2em;
   align-items: center;
@@ -194,6 +207,10 @@ footer {
   max-width: 100%;
   border-radius: 7px;
   margin-bottom: 1rem;
+}
+
+.movie-name {
+  text-align: left !important;
 }
 
 .movie-title-and-rating {
@@ -223,16 +240,20 @@ footer {
 .go-to-watchlist,
 a {
   text-align: right;
-  transition: 300ms;
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
 }
 
+.watchlist,
+.go-to-watchlist {
+  transition: 300ms;
+}
+
 .go-to-watchlist:hover,
-a {
-  font-weight: 600;
+a:hover,
+.watchlist:hover {
   cursor: pointer;
-  color: inherit;
+  color: #de4f47;
 }
 
 .movie-description {

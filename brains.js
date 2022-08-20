@@ -63,15 +63,14 @@ async function Render() {
             <div class="col-md-8">
               <div class="movie-title-and-rating">
                 <h2 class="movie-name">
-                  ${data.Title} <span class="rated">${data.Rated}</span>
+                  ${data.Title} <span class="rated">(${data.Year}) - ${data.Rated}</span>
                 </h2>
               </div>
               <div class="movie-small-deets movie-deets">
-              <p class="movie-deets year">🎬 ${data.Year}</p>
                 <p class="movie-deets rating">⭐️ ${data.imdbRating}</p>
                 <p class="movie-duration">${data.Runtime}</p>
                 <p class="movie-category"> ${data.Genre} </p>
-                <p class="watchlist">
+                 <p class="watchlist">
                   <strong
                     ><i class="bi bi-plus-circle-fill"></i> Watchlist</strong
                   >
