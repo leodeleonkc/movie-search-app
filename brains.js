@@ -21,14 +21,13 @@ let movies;
 async function findMovie() {
   // Fetch the initial search query
   const res = await fetch(
-    `https://www.omdbapi.com/?apikey=98a9f83d&s=${searchQuery.value}`
+    `https://www.omdbapi.com/?apikey=98a9f83d&s=${searchQuery.value}&type=movie`
   );
   const firstData = await res.json();
-  // console.log(firstData);
-  movies = Object.values(firstData.Search);
 
   // Invalid response action
   if (firstData.Response === "True") {
+    movies = Object.values(firstData.Search);
     // Loop through the returned object & new fetch request utilizing imdbID
     Render();
   } else {
@@ -41,16 +40,11 @@ async function Render() {
   dynamicHtml.innerHTML = "";
   for (let { imdbID } of movies) {
     const res = await fetch(
-      `https://www.omdbapi.com/?apikey=98a9f83d&i=${imdbID}&type=movie`
+      `https://www.omdbapi.com/?apikey=98a9f83d&i=${imdbID}`
     );
     const data = await res.json();
 
-    console.log(data.Type);
-
-    // Filter results to only show "movies" (vs series or games)
-    // function isMovie (data) {
-    //   return data.Type = "movie"
-    // }
+    console.log(data);
 
     // Render HTML elements
 
@@ -63,6 +57,7 @@ async function Render() {
                 src="${data.Poster}"
                 alt="Movie Poster"
                 class="movie-poster-img"
+                onerror="this.onerror=null; this.src='images/default.jpg'"
               />
             </div>
             <div class="col-md-8">
@@ -72,6 +67,7 @@ async function Render() {
                 </h2>
               </div>
               <div class="movie-small-deets movie-deets">
+              <p class="movie-deets year">🎬 ${data.Year}</p>
                 <p class="movie-deets rating">⭐️ ${data.imdbRating}</p>
                 <p class="movie-duration">${data.Runtime}</p>
                 <p class="movie-category"> ${data.Genre} </p>
@@ -82,7 +78,7 @@ async function Render() {
                 </p>
               </div>
               <div class="movie-description">
-                <p class="movie-info-text">
+                <p class="movie-plot">
                   ${data.Plot}
                 </p>
               </div>
