@@ -43,18 +43,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <!-- Search Bar CDN List -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-    />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"
-    />
-
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
@@ -79,7 +67,11 @@
         data-depth="0.10"
         data-type="parallax"
       ></div>
-      <div class="layer-bg layer" data-depth="0.15" data-type="parallax"></div>
+      <div
+        class="wl-layer-bg layer"
+        data-depth="0.15"
+        data-type="parallax"
+      ></div>
       <div class="layer-1 layer" data-depth="0.12" data-type="parallax">
         <img class="reel" src="images/reel.png" alt="" />
       </div>
@@ -93,57 +85,26 @@
     </header>
 
     <div class="container">
-      <!-- Search Bar -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="input-group search">
-            <input
-              type="text"
-              id="search-query"
-              class="form-control input-text"
-              placeholder="Search movies...."
-              aria-label="Search Movies"
-              aria-describedby="basic-addon2"
-            />
-            <div class="input-group-append">
-              <button
-                id="search-go"
-                class="btn btn-outline-warning btn-lg"
-                type="button"
-              >
-                <i class="fa fa-search"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- End of Search Bar -->
-
       <!-- Toggled Content -->
       <div class="toggled-content">
-        <p class="go-to-watchlist">
-          <a href="watchlist.html">Go to Watchlist</a>
+        <p class="go-to-watchlist back-to-search">
+          <a href="index.html">Back to Search</a>
         </p>
 
-        <img
-          class="explore"
-          src="images/no-data-initial.svg"
-          alt="Movie film icon with a message to start exploring"
-        />
-        <h1 class="explore invalid-search hidden">
-          Unable to find what you're looking for. Please try another search.
+        <h1 class="explore invalid-search">
+          🤔 Nothing here yet. Go back to the search page and add some movies to
+          your watchlist.
         </h1>
       </div>
 
       <!-- Dynamic Content -->
-      <div id="dynamic-html" class="container-flex"></div>
+      <div id="dynamic-watchlist" class="container-flex"></div>
     </div>
     <footer>
       <p class="footer-text">Made with 🤍 in KC</p>
     </footer>
 
-    <script src="brains.js"></script>
+    <script src="watchlist.js"></script>
     <script src="parallax.js"></script>
   </body>
 </html>

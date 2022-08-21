@@ -33,6 +33,7 @@ async function findMovie() {
   } else {
     exploreImg.classList.add("hidden");
     invalidSearch.classList.remove("hidden");
+    dynamicHtml.innerHTML = "";
   }
 }
 
@@ -44,7 +45,7 @@ async function Render() {
     );
     const data = await res.json();
 
-    console.log(data);
+    // console.log(data);
 
     // Render HTML elements
 
@@ -70,20 +71,54 @@ async function Render() {
                 <p class="movie-deets rating">⭐️ ${data.imdbRating}</p>
                 <p class="movie-duration">${data.Runtime}</p>
                 <p class="movie-category"> ${data.Genre} </p>
-                 <p class="watchlist">
+                 <p class="watchlist" id="watchlist-${data.imdbID}" onclick="addToWatchList('${data.imdbID}')">
                   <strong
                     ><i class="bi bi-plus-circle-fill"></i> Watchlist</strong
                   >
                 </p>
+                <p class="added hidden" id="added-${data.imdbID}" hidden">
+                <strong
+                  ><i class="bi bi-clipboard-check-fill"></i> Added!</strong
+                >
+              </p>
+              <p class="already-added hidden" id="already-added-${data.imdbID}"" hidden">
+              <strong
+                ><i class="bi bi-exclamation-triangle"></i> Already Added!</strong
+              >
+            </p>
               </div>
               <div class="movie-description">
                 <p class="movie-plot">
                   ${data.Plot}
                 </p>
               </div>
-              <hr>
             </div>
           </article>
             `;
   }
+}
+
+// WatchList Functions
+
+let localWatchList = [];
+function addToWatchList(movieId) {
+  if (localStorage.getItem("watchList")) {
+    localWatchList = JSON.parse(localStorage.getItem("watchList"));
+    if (!localWatchList.includes(movieId)) {
+      localWatchList.push(movieId);
+      window.localStorage.setItem("watchList", JSON.stringify(localWatchList));
+      document.getElementById(`watchlist-${movieId}`).classList.add("hidden");
+      document.getElementById(`added-${movieId}`).classList.remove("hidden");
+    } else {
+      document.getElementById(`watchlist-${movieId}`).classList.add("hidden");
+      document
+        .getElementById(`already-added-${movieId}`)
+        .classList.remove("hidden");
+    }
+  } else {
+    localWatchList.push(movieId);
+    window.localStorage.setItem("watchList", JSON.stringify(localWatchList));
+    document.getElementById(`watchlist-${data.imdbID}`).remove();
+  }
+  // console.log(localWatchList);
 }
