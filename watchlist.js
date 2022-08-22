@@ -44,7 +44,7 @@ function renderWatchList(data) {
         <p class="movie-category"> ${data.Genre} </p>
          <p class="already-added" onclick="removeFromWatchList('${data.imdbID}')">
           <strong
-            ><i class="bi bi-plus-circle-fill"></i> Remove</strong
+            ><i class="bi bi-x-circle-fill"></i> Remove</strong
           >
         </p>
         <p class="added hidden">
